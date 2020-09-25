@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DataLibrary.Models.FoodModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+<div class="card-columns">
+    <div class="card" style="width: 18rem;">
+        <img src="/image/burger.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Burger meals</h5>
+            <p class="card-text">Tasty burgers with various menu options, with classic fries or sweet potatoe and fresh salad.</p>
+            <a asp-page="/Orders/Create" class="btn btn-primary">Order</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img src="/image/mexican.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Mexican meals</h5>
+            <p class="card-text">Taste our authentic mexican burritos or quesadillas with the stuffing of your own taste and choose the menu you like.</p>
+            <a asp-page="/Orders/Create" class="btn btn-primary">Order</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img src="/image/vegan.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Vegal meals</h5>
+            <p class="card-text">Exciting vegan dishes, roasted veggies with various side dishes, veggie soups and stews.</p>
+            <a asp-page="/Orders/Create" class="btn btn-primary">Order</a>
+        </div>
+    </div>
+</div>
+
